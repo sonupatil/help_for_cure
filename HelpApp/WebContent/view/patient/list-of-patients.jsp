@@ -14,8 +14,7 @@ List<Patient> pt = SelectQuery.getPatientList();
 <jsp:include page="../../header.jsp"></jsp:include>
 
     <!-- Services Section -->
-    <section id="services">
-        <div class="container">
+
           <h1>We are working on it</h1>
       <% if(pt!=null){ %>      
             <table class="table">
@@ -63,8 +62,7 @@ List<Patient> pt = SelectQuery.getPatientList();
             <% }else{ %>
             <h1>Nothing to show</h1>
             <% } %>
-        </div>
-    </section>
+
     
 
 <jsp:include page="../../footer.jsp"></jsp:include>

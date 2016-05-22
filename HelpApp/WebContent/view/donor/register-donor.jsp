@@ -2,10 +2,7 @@
 
 
     <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-           
-           
+
            
            
            <form class="form-horizontal">
@@ -83,11 +80,7 @@
            
            
            
-           
-           
-        </div>
-    </section>
-    
+
 
 
 

@@ -1,10 +1,7 @@
 <jsp:include page="../../header.jsp"></jsp:include>
 
     <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-				
-				
+
 				
 				
 				
@@ -145,9 +142,7 @@
 				
 				
 				
-        </div>
-    </section>
-    
+
 
 
 <jsp:include page="../../footer.jsp"></jsp:include>

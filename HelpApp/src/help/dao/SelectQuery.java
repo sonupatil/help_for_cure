@@ -5,9 +5,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mysql.jdbc.Statement;
 
+import help.models.Patient;
 import help.models.User;
 
 
@@ -44,6 +47,40 @@ public class SelectQuery {
 			e.printStackTrace();
 		}
 		return op;
+	}
+	
+	
+	public static List<Patient> getPatientList(){
+		List<Patient> patients = null;
+		//patients = new ArrayList<Patient>();
+		
+		Patient op = null;
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+			
+		  //STEP 2: Register JDBC driver
+	      try {
+			Class.forName("com.mysql.jdbc.Driver");
+			patients = new ArrayList<Patient>();
+			conn = (Connection)DriverManager.getConnection(DB_URL, USER, PASS);
+			stmt = (Statement)conn.createStatement();
+			String sql = "SELECT name,disease_name,address,stage FROM help_app.patients;";
+			 rs = ((java.sql.Statement) stmt).executeQuery(sql);
+		     while(rs.next()){
+		    	 op = new Patient();
+		    	 op.setName(rs.getString("name"));
+		    	 op.setDiseaseName(rs.getString("disease_name"));
+		    	 op.setAddress(rs.getString("address"));
+		    	 op.setStage(rs.getString("stage"));
+		    	 patients.add(op);
+		     }
+		     
+	  	} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return patients;
 	}
 	
 	
